@@ -1,0 +1,11 @@
+{
+  "name": "network-connectivity-checker-backend",
+  "version": "1.0.0",
+  "description": "Plain Java DFS backend — no Spring, no Maven",
+  "scripts": {
+    "start": "javac *.java && java Main",
+    "build": "javac *.java",
+    "run":   "java Main"
+  },
+  "private": true
+}

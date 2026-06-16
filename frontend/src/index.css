@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* ── Color tokens ──────────────────────────────── */
+:root {
+  --sage:    #C0E1D2;
+  --mint:    #E5EEE4;
+  --cream:   #F6F4E8;
+  --rose:    #DC9B9B;
+  --sage-d:  #8CBFAB;   /* darker sage for borders / active */
+  --rose-d:  #c07070;   /* darker rose for hover */
+  --ink:     #2e3a30;   /* dark green-tinted text */
+  --muted:   #7a8c7e;   /* subdued label text */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Buttons ──────────────────────────────────── */
+.btn-primary {
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(220,155,155,0.35);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--rose-d);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(220,155,155,0.45);
+}
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--sage-d);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.18s, transform 0.12s;
+}
+.btn-ghost:hover {
+  background: var(--mint);
+  transform: translateY(-1px);
+}
+
+/* ── Step-by-Step button ──────────────────────────────── */
+.btn-step {
+  background: var(--sage);
+  color: var(--ink);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(140,191,171,0.3);
+}
+.btn-step:hover:not(:disabled) {
+  background: var(--sage-d);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(140,191,171,0.4);
+}
+.btn-step:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* ── Cards ────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1.5px solid #e8e6db;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+/* ── PC count selector ────────────────────────── */
+.pc-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--mint);
+  border: 1.5px solid var(--sage-d);
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+.pc-stepper button {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: none;
+  background: var(--sage);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.pc-stepper button:hover { background: var(--sage-d); }
+.pc-stepper span {
+  font-weight: 800;
+  font-size: 16px;
+  min-width: 28px;
+  text-align: center;
+  color: var(--ink);
+}
+
+/* ── React Flow overrides ─────────────────────── */
+.react-flow__node {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  /* NO cursor override here — ReactFlow sets grab, handles set crosshair */
+}
+
+/* Glow on handle hover so user clearly sees the connection point */
+.react-flow__handle:hover {
+  background: #c07070 !important;
+  box-shadow: 0 0 0 4px rgba(220,155,155,0.4) !important;
+  transform: scale(1.3);
+  transition: all 0.15s ease;
+}
+
+/* Remove default edge arrows */
+.react-flow__arrowhead { display: none; }
+
+/* Edge hover highlight */
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #DC9B9B !important;
+  stroke-width: 3 !important;
+}
+
+/* ── Animations ───────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+.fade-in { animation: fadeIn 0.3s ease both; }
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(192,225,210,0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(192,225,210,0); }
+  100% { box-shadow: 0 0 0 0 rgba(192,225,210,0); }
+}

@@ -1,0 +1,15 @@
+# ── Backend compiled files ──────────────────
+backend/*.class
+
+# ── Frontend dependencies & build output ────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ── OS junk ─────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editor ──────────────────────────────────
+.vscode/
+.idea/

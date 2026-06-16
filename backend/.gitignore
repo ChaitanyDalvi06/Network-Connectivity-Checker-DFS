@@ -1,0 +1,2 @@
+# Java compiled bytecode — never commit these
+*.class
