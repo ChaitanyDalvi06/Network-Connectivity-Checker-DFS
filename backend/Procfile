@@ -1,1 +1,0 @@
-web: javac *.java && java Main
