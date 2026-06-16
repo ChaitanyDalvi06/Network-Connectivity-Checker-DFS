@@ -1,155 +1,201 @@
-# Network Connectivity Checker
+# 🌐 Network Connectivity Checker
+## *Interactive DFS Algorithm Visualizer with Real-time Network Simulation*
 
-> An interactive DSA project demonstrating the **Depth First Search (DFS)** algorithm on graphs through a visual computer-network simulation.
+<div align="center">
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Java](https://img.shields.io/badge/Java-ED8936?style=flat&logo=java&logoColor=white)](https://www.java.com/)
+[![React](https://img.shields.io/badge/React%2018-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-## Overview
+> 🚀 A powerful, interactive visualization tool for understanding **Depth First Search (DFS)** algorithms through an engaging computer network simulation experience.
 
-This project lets you visually build a computer network, run DFS on it, and instantly see:
-
-- Whether the network is **Connected** or **Disconnected**
-- The **DFS traversal order** animated step-by-step
-- Which computers are **isolated** (unreachable from PC 1)
-- The live **adjacency list**
-- The algorithm's **Time and Space complexity**
-
----
-
-## Features
-
-- 6 draggable computer nodes rendered with React Flow
-- Visual edge-drawing by pulling node handles (no manual typing)
-- Duplicate edge and self-loop prevention
-- Live adjacency list that updates as you connect nodes
-- DFS traversal animation (500ms per node) with color coding:
-  - 🟢 Green — visited
-  - 🔵 Blue — currently active
-  - ⚪ Gray — not yet visited
-- Toast notifications for success / error states
-- Responsive single-page layout
+</div>
 
 ---
 
-## Technologies
+## 📋 Overview
 
-| Layer    | Technology                          |
-|----------|-------------------------------------|
-| Frontend | React 18 (Vite), Tailwind CSS v4    |
-| Graph UI | React Flow                          |
-| HTTP     | Axios                               |
-| Icons    | Lucide React                        |
-| Toasts   | React Hot Toast                     |
-| Backend  | Plain Java — `com.sun.net.httpserver.HttpServer` |
+Visualize and analyze graph connectivity in **real-time** with an intuitive drag-and-drop interface:
+
+| 🔍 Detection | ⚡ Performance | 📊 Insights |
+|:---:|:---:|:---:|
+| **Connected** ↔️ **Disconnected** networks | Animated DFS traversal (500ms/step) | Live adjacency lists |
+| Identify **isolated** computers | Step-by-step visualization | Complexity analysis |
+| Interactive edge drawing | Color-coded node states | Real-time feedback |
 
 ---
 
-## Folder Structure
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎯 Core Features
+- ✅ 6 draggable computer nodes (React Flow)
+- ✅ Visual edge-drawing (no typing!)
+- ✅ Duplicate edge prevention
+- ✅ Self-loop detection
+- ✅ Live adjacency list updates
+- ✅ Toast notifications
+
+</td>
+<td width="50%">
+
+### 🎨 Visualization
+- 🟢 **Green** = Visited nodes
+- 🔵 **Blue** = Currently active
+- ⚪ **Gray** = Unvisited nodes
+- ⚡ Real-time animation
+- 📱 Fully responsive UI
+- 🎭 Smooth transitions
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🛠️ Tech Stack
+
+<table>
+<tr>
+<td><strong>🎨 Frontend</strong></td>
+<td>React 18 (Vite), Tailwind CSS v4, React Flow</td>
+</tr>
+<tr>
+<td><strong>💻 Backend</strong></td>
+<td>Java (HttpServer, Clean Architecture)</td>
+</tr>
+<tr>
+<td><strong>🔌 Communication</strong></td>
+<td>Axios, REST API</td>
+</tr>
+<tr>
+<td><strong>🎯 UI Components</strong></td>
+<td>Lucide React Icons, React Hot Toast</td>
+</tr>
+</table>
+
+---
+
+## 📁 Project Structure
 
 ```
 Network-Connectivity-Checker/
-├── frontend/
-│   └── src/
-│       ├── App.jsx          # Main page, state management, DFS animation
-│       ├── GraphCanvas.jsx  # React Flow graph with custom ComputerNode
-│       ├── ResultPanel.jsx  # Cards: status, traversal, adjacency, complexity
-│       ├── api.js           # Axios POST /check helper
-│       └── main.jsx         # React entry point
-├── backend/
-│   ├── Main.java            # HTTP server, JSON parse/serialize
-│   ├── DFSService.java      # Core DFS algorithm
-│   ├── GraphRequest.java    # Request POJO
-│   └── GraphResponse.java   # Response POJO
-└── README.md
+│
+├── 📂 frontend/
+│   ├── src/
+│   │   ├── 🎨 App.jsx              # Main component & state management
+│   │   ├── 📊 GraphCanvas.jsx      # React Flow graph visualization
+│   │   ├── 📈 ResultPanel.jsx      # Results & complexity display
+│   │   ├── 🔗 api.js               # Axios API calls
+│   │   └── 🚀 main.jsx             # React entry point
+│   ├── 🎯 index.html
+│   ├── ⚙️  package.json
+│   └── 🔧 vite.config.js
+│
+├── 📂 backend/
+│   ├── 🖥️  Main.java               # HTTP server & JSON handling
+│   ├── 🔍 DFSService.java          # Core DFS algorithm
+│   ├── 📨 GraphRequest.java        # Request model
+│   └── 📤 GraphResponse.java       # Response model
+│
+└── 📖 README.md
 ```
 
 ---
 
-## How to Run
+## 🚀 Quick Start
 
-### Backend (Java)
+### Step 1️⃣ | Backend (Java)
 
 ```bash
 cd backend
 javac *.java
 java Main
-# Server starts at http://localhost:8080
+# ✅ Server running at http://localhost:8080
 ```
 
-### Frontend (React + Vite)
+### Step 2️⃣ | Frontend (React + Vite)
 
 ```bash
 cd frontend
 npm install
 npm run dev
-# App opens at http://localhost:5173
+# ✅ App available at http://localhost:5173
 ```
 
-> Make sure the backend is running **before** clicking "Run DFS".
+> ⚠️ **Important:** Start the backend **before** running DFS!
 
 ---
 
-## Algorithm Explanation
+## 🧠 Algorithm Deep Dive
 
-### Depth First Search (DFS)
+### 🔍 Depth First Search (DFS)
 
-DFS explores a graph by going as deep as possible along each branch before backtracking.
+Explores a graph by traversing as deep as possible along each branch before backtracking.
 
-**Steps:**
-1. Start at node 1 (Computer 1).
-2. Mark it as `visited` and record it in `traversalOrder`.
-3. For each unvisited neighbour, recurse.
-4. After DFS completes, count visited nodes.
-5. If `visitedCount == totalNodes` → **Connected**, else → **Disconnected**.
+#### ⚙️ How It Works
 
-**Implementation (Java):**
+```
+1️⃣  Start at node 1
+2️⃣  Mark as visited → record in traversal order
+3️⃣  Recursively visit unvisited neighbors
+4️⃣  Backtrack & repeat for next branch
+5️⃣  Count visited nodes
+6️⃣  Connected? visitedCount == totalNodes
+```
+
+#### 💻 Java Implementation
 
 ```java
 void dfs(int node) {
     visited[node] = true;
     traversal.add(node);
+    
     for (int neighbour : adj.get(node)) {
         if (!visited[neighbour]) {
-            dfs(neighbour);
+            dfs(neighbour);  // Recursive exploration
         }
     }
 }
 ```
 
-### Time Complexity
+#### ⏱️ Complexity Analysis
 
-```
-O(V + E)
-```
+| Metric | Value | Reason |
+|--------|-------|--------|
+| **Time** | **O(V + E)** | Each vertex & edge visited once |
+| **Space** | **O(V)** | `visited[]` array + call stack depth |
 
-- V = number of vertices (computers)
-- E = number of edges (connections)
-- Every vertex is visited once, every edge is traversed once.
-
-### Space Complexity
-
-```
-O(V)
-```
-
-- `visited[]` array of size V
-- Recursion call stack can go at most V levels deep.
+Where:
+- **V** = Number of vertices (computers)
+- **E** = Number of edges (connections)
 
 ---
 
-## API
+## 🔌 REST API Reference
 
-**POST** `http://localhost:8080/check`
+### 📤 POST `/check`
 
-**Request:**
+**Endpoint:** `http://localhost:8080/check`
+
+#### 📨 Request Body
 ```json
 {
   "nodes": 6,
-  "edges": [[1,2],[1,3],[2,4]]
+  "edges": [
+    [1, 2],
+    [1, 3],
+    [2, 4]
+  ]
 }
 ```
 
-**Response:**
+#### 📬 Response Body
 ```json
 {
   "connected": false,
@@ -170,16 +216,63 @@ O(V)
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
-> *(Add screenshots here after running the project)*
+> 🎬 Coming soon! Run the project and see the visualization in action.
 
 ---
 
-## Future Improvements
+## 🎯 Future Enhancements
 
-- Add BFS traversal as an alternative algorithm
-- Support for weighted edges and Dijkstra's shortest path
-- Ability to add/remove nodes dynamically
-- Export graph as image
-- Step-by-step manual DFS mode for learning
+<details>
+<summary><strong>📋 Roadmap</strong></summary>
+
+- 🔄 **BFS Algorithm** - Compare with DFS traversal
+- 🗺️ **Dijkstra's Algorithm** - Shortest path visualization
+- 🎚️ **Weighted Edges** - Distance-based connections
+- ➕➖ **Dynamic Nodes** - Add/remove nodes at runtime
+- 🖼️ **Export Graph** - Save as PNG/SVG
+- 👓 **Tutorial Mode** - Manual step-by-step exploration
+- 🎮 **Interactive Challenges** - Learn by doing
+- 📊 **Performance Metrics** - Real-time statistics
+
+</details>
+
+---
+
+## 📚 Learning Resources
+
+This project demonstrates key **Data Structures & Algorithms** concepts:
+- ✅ Graph representation (adjacency list)
+- ✅ Recursive algorithms & backtracking
+- ✅ Complexity analysis (Big O notation)
+- ✅ Algorithm visualization & animation
+- ✅ Full-stack development (Java + React)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- 🐛 Report bugs
+- 💡 Suggest features
+- 📝 Improve documentation
+- 🔧 Submit pull requests
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see LICENSE file for details.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this helpful, please give it a star!
+
+Made with ❤️ by [Chaitanya Dalvi](https://github.com/ChaitanyDalvi06)
+
+[⬆ Back to Top](#-network-connectivity-checker)
+
+</div>

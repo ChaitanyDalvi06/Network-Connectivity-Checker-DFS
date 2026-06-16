@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Port 8090 — 8080 is reserved by Jenkins on this machine
-const BASE_URL = 'http://localhost:8090';
+// Get backend URL from environment variable, default to localhost:8080
+const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
 
 /**
  * Send the graph to the Java backend and receive the DFS result.

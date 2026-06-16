@@ -1,5 +1,5 @@
-import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpServer;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
@@ -16,14 +16,16 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8090), 0);
+        // Read port from environment variable, default to 8080
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         // Register the single endpoint
         server.createContext("/check", Main::handleCheck);
 
         server.setExecutor(null); // use default executor
         server.start();
-        System.out.println("Backend running at http://localhost:8090");
+        System.out.println("Backend running at http://localhost:" + port);
     }
 
     // -----------------------------------------------------------------------
