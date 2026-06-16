@@ -3,7 +3,7 @@
 
 <div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [![Java](https://img.shields.io/badge/Java-ED8936?style=flat&logo=java&logoColor=white)](https://www.java.com/)
 [![React](https://img.shields.io/badge/React%2018-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -12,6 +12,8 @@
 > 🚀 A powerful, interactive visualization tool for understanding **Depth First Search (DFS)** algorithms through an engaging computer network simulation experience.
 
 </div>
+
+<h2>Hosted Link : https://network-connectivity-checker-dfs.vercel.app/ </h2>
 
 ---
 
@@ -258,12 +260,6 @@ Contributions are welcome! Feel free to:
 - 💡 Suggest features
 - 📝 Improve documentation
 - 🔧 Submit pull requests
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see LICENSE file for details.
 
 ---
 
